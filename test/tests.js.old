@@ -1,0 +1,37 @@
+const { expect } = require('chai');
+const { ethers } = require('hardhat');
+
+describe('Token Contract', () => {
+  let Token, token, owner, addr1, addr2;
+
+  beforeEach(async () => {
+    Token = await ethers.getContractFactory('Token');
+    token = await Token.deploy();
+    [owner, addr1, addr2, _] = await ethers.getSigners();
+  });
+
+  describe('Deployment', () => {
+    it('should set the right owner', async () => {
+      // console.log(token)
+      expect(await token.minter()).to.equal(owner.address)
+    })
+    it('should assign the total supy of tokens to the owner', async () => {
+      const ownewBalance = await token.balanceOf(owner.address);
+      expect(await token.totalSupply()).to.equal(ownewBalance);
+    })
+  });
+
+  describe('Transactions', () => {
+    it('Should transfer tokens between accounts', async () => {
+      await token.transfer(addr1.address, 50);
+      const addr1Balance = await token.balanceOf(addr1.address);
+      console.log(addr1Balance)
+      expect(addr1Balance).to.equal(50);
+
+      await token.connect(addr1).transfer(addr2.address, 50)
+      const addr2Balance = await token.balanceOf(addr2.address);
+      expect(addr2Balance).to.equal(50);
+
+    })
+  })
+})
