@@ -12,6 +12,7 @@ async function main(){
   const dBank = await ethers.getContractFactory('dBank');
   const token = await Token.deploy();
   const dbank = await dBank.deploy(token.address);
+  await token.passMinterRole(dbank.address);
   console.log(`Token address: ${token.address}`)
   console.log(`dBank address: ${dbank.address}`)
 

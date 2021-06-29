@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/matiaskochman/dev/youtube_eattheblocks_blockchain/hard-hat-react/contracts/dBank.sol": {
-      "lastModificationDate": 1624916043193,
-      "contentHash": "6cc6b9005abebfd34202ed6c1cba0f99",
+      "lastModificationDate": 1624934210964,
+      "contentHash": "22c88d118a8578b0b366520374b3975b",
       "sourceName": "contracts/dBank.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -39,8 +39,8 @@
       ]
     },
     "/Users/matiaskochman/dev/youtube_eattheblocks_blockchain/hard-hat-react/contracts/Token.sol": {
-      "lastModificationDate": 1624915204551,
-      "contentHash": "a6422fe6170909e8029c0fe03b549e00",
+      "lastModificationDate": 1624932897453,
+      "contentHash": "0d42e6c5267678d8dfa3899716aead7c",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.8.4",

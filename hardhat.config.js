@@ -37,8 +37,8 @@ task("accounts", "Prints the list of accounts", async () => {
 // };
 
 module.exports = {
-  defaultNetwork: "matic",
-  // defaultNetwork: "hardhat",
+  // defaultNetwork: "matic",
+  defaultNetwork: "hardhat",
   networks: {
     hardhat: {            
     }
@@ -67,3 +67,6 @@ module.exports = {
     timeout: 20000
   }
 }
+// npx hardhat node
+// npx hardhat run scripts/deploy.js
+// npx hardhat run --network <your-network> scripts/deploy.js

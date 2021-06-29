@@ -53,7 +53,10 @@ contract dBank {
     uint depositTime = block.timestamp - depositStart[msg.sender];
     //calc interest per second
 
-    uint interestPerSecond =  (userBalance / 10 ) / 31557600;
+    // uint interestPerSecond =  (userBalance / 10 ) / 31557600;
+
+    uint interestPerSecond =  (userBalance / 10 ) / 315576;
+
     //calc accrued interest
     uint interest =  depositTime * interestPerSecond;
 
@@ -71,7 +74,7 @@ contract dBank {
   }
 
   function borrow() payable public {
-    require(msg.value>=1e16, 'Error, collateral must be >= 0.01 ETH');
+    require(msg.value>=1e15, 'Error, collateral must be >= 0.001 ETH');
     require(isBorrowed[msg.sender] == false, 'Error, loan already taken');
 
     //this Ether will be locked till user payOff the loan
